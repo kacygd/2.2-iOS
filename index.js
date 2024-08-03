@@ -28,9 +28,9 @@ async function main() {
 
     var base = process.env.url ? process.env.url : prompt("Enter URL (33 chars): ");
 
-    while (base.length != 34) {
-        console.log("Length isn't 34!!!\n");
-        var base = prompt("Enter URL (34 chars): ");
+    while (base.length != 35) {
+        console.log("Length isn't 35!!!\n");
+        var base = prompt("Enter URL (35 chars): ");
     }
     var b64 = Buffer.from(base).toString('base64');
     var url = `${base}/`;
@@ -50,7 +50,7 @@ async function main() {
     await fs.promises.writeFile(`${path}/Info.plist`, plist, 'utf8');
     
     var gd = await fs.promises.readFile(`${path}/${name}`, 'binary');
-    gd = gd.replaceAll("com.robtop.geometryjump", bundle).replaceAll("https://www.boomlings.com/database", url).replaceAll("aHR0cDovL3d3dy5ib29tbGluZ3MuY29tL2RhdGFiYXNl", b64);
+    gd = gd.replaceAll("com.robtop.geometryjump", bundle).replaceAll("https://www.boomlings.com/database/", url).replaceAll("aHR0cDovL3d3dy5ib29tbGluZ3MuY29tL2RhdGFiYXNl", b64);
     await fs.promises.writeFile(`${path}/${name}`, gd, 'binary');
     
     console.log("Compressing...\n")
