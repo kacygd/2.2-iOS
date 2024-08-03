@@ -7,7 +7,7 @@ on:
         description: "GDPS Name"
         required: true
       url:
-        description: "GDPS URL (33 CHARACTERS)"
+        description: "GDPS URL (34 CHARACTERS)"
         required: true
       bundle:
         description: "BUDNLE ID (23 CHARACTERS)"
