@@ -28,9 +28,9 @@ async function main() {
 
     var base = process.env.url ? process.env.url : prompt("Enter URL (33 chars): ");
 
-    while (base.length != 33) {
-        console.log("Length isn't 33!!!\n");
-        var base = prompt("Enter URL (33 chars): ");
+    while (base.length != 34) {
+        console.log("Length isn't 34!!!\n");
+        var base = prompt("Enter URL (34 chars): ");
     }
     var b64 = Buffer.from(base).toString('base64');
     var url = `${base}/`;
